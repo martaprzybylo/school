@@ -27,25 +27,24 @@ public class SchoolApplication {
         s.setPerson(p);
         s.setGrades(Lists.newArrayList(new Grade(5,s), new Grade(5,s), new Grade(6,s)));
 
-        Student found = em.find(Student.class, 1L);
-        em.remove(found);
-        Student found2 = em.find(Student.class, 2L);
-        em.remove(found2);
-
-        Student found3 = em.find(Student.class, 3L);
-        found3.getPerson().setFirstName("Marta");
-        em.merge(found3);
+//        Student found = em.find(Student.class, 1L);
+//        em.remove(found);
+//        Student found2 = em.find(Student.class, 2L);
+//        em.remove(found2);
+//
+//        Student found3 = em.find(Student.class, 3L);
+//        found3.getPerson().setFirstName("Marta");
+//        em.merge(found3);
 
         em.persist(s);
         em.getTransaction().commit();
 
-        String query = "SELECT s FROM STUDENT s WHERE s.person.firstName=:firstName AND s.person.lastName=:lastName";
-        List <Student> people =
-                em.createQuery(query)
-                        .setParameter("firstName", "Mysia").setParameter("lastName","Pysia")
-                        .getResultList();
+//        String query = "SELECT s FROM STUDENT s WHERE s.person.firstName=:firstName AND s.person.lastName=:lastName";
+//        List <Student> people =
+//                em.createQuery(query)
+//                        .setParameter("firstName", "Mysia").setParameter("lastName","Pysia")
+//                        .getResultList();
         
-        System.out.println(people);
 
 
 
