@@ -20,11 +20,11 @@ public class Person extends EntityBase{
     @Column (name = "birth_date", updatable = true)
     private Date birthDate;
 
-//    @Column (name = "email", updatable = true)
-//    private String email;
-//
-//    @Column (name = "tel_number", updatable = true)
-//    private Integer telNumber;
+    @Column (name = "email", updatable = true)
+    private String email;
+
+    @Column (name = "tel_number", updatable = true)
+    private Integer telNumber;
 
     public String getFirstName() {
         return firstName;
@@ -58,21 +58,21 @@ public class Person extends EntityBase{
         this.gender = gender;
     }
 
-//    public String getEmail() {
-//        return email;
-//    }
-//
-//    public void setEmail(String email) {
-//        this.email = email;
-//    }
-//
-//    public int getTelNumber() {
-//        return telNumber;
-//    }
-//
-//    public void setTelNumber(Integer telNumber) {
-//        this.telNumber = telNumber;
-//    }
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getTelNumber() {
+        return telNumber;
+    }
+
+    public void setTelNumber(Integer telNumber) {
+        this.telNumber = telNumber;
+    }
 
 
 }

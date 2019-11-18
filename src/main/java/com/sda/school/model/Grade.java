@@ -13,6 +13,10 @@ public class Grade extends EntityBase {
     @JoinColumn (name = "student_id", nullable = false)
     private Student student;
 
+    @ManyToOne (optional = false)
+    @JoinColumn (name = "subject_id", nullable = false)
+    private Subject subject;
+
     public Grade() {
     }
 
@@ -35,5 +39,13 @@ public class Grade extends EntityBase {
 
     public void setStudent(Student student) {
         this.student = student;
+    }
+
+    public Subject getSubject() {
+        return subject;
+    }
+
+    public void setSubject(Subject subject) {
+        this.subject = subject;
     }
 }
