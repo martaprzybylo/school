@@ -9,6 +9,8 @@
         <class>com.sda.school.model.Student</class>
         <class>com.sda.school.model.Grade</class>
         <class>com.sda.school.model.Subject</class>
+        <class>com.sda.school.model.Principal</class>
+        <class>com.sda.school.model.Teacher</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>

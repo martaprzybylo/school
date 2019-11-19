@@ -1,10 +1,7 @@
 package com.sda.school;
 
 import com.google.common.collect.Lists;
-import com.sda.school.model.Grade;
-import com.sda.school.model.Person;
-import com.sda.school.model.Student;
-import com.sda.school.model.Subject;
+import com.sda.school.model.*;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -20,30 +17,41 @@ public class SchoolApplication {
 
         em.getTransaction().begin();
 
-//        Person p = new Person();
-//        p.setFirstName("Mysia");
-//        p.setLastName("Pysia");
-//
+
+        Person p = new Person();
+        p.setFirstName("Mateusz");
+        p.setLastName("Informatyk");
+
 //        Student s = new Student();
 //        s.setPerson(p);
-//
 //        em.persist(s);
+
+        Teacher t = new Teacher();
+        t.setPerson(p);
+        em.persist(t);
 //
 //
-//        Subject sub = new Subject();
-//        sub.setSubjectName("Matematyka");
-//        em.persist(sub);
+        Subject sub = new Subject();
+        sub.setSubjectName("Informatyka");
+        sub.setTeacher(t);
+        em.persist(sub);
+//
+//       Student student = em.find(Student.class, 1L);
+//
+//        Subject subject = em.find(Subject.class, 1L);
+//
+//
+//        Grade mathGrade = new Grade();
+//        mathGrade.setStudent(student);
+//        mathGrade.setValue(4);
+//        mathGrade.setSubject(subject);
+//        em.persist(mathGrade);
 
-       Student student = em.find(Student.class, 1L);
+//        Principal principal = new Principal();
+//        principal.setPerson(p);
+//        em.persist(principal);
 
-        Subject subject = em.find(Subject.class, 1L);
 
-
-        Grade mathGrade = new Grade();
-        mathGrade.setStudent(student);
-        mathGrade.setValue(4);
-        mathGrade.setSubject(subject);
-        em.persist(mathGrade);
 
 //        Student found = em.find(Student.class, 1L);
 //        em.remove(found);
