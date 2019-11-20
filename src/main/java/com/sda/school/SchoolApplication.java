@@ -19,13 +19,14 @@ public class SchoolApplication {
 
         em.getTransaction().begin();
 
+
         Person p = new Person();
         p.setFirstName("Mysia");
         p.setLastName("Pysia");
 
         Student s = new Student();
         s.setPerson(p);
-        s.setGrades(Lists.newArrayList(new Grade(5,s), new Grade(5,s), new Grade(6,s)));
+        //s.setGrades(Lists.newArrayList(new Grade(5,s), new Grade(5,s), new Grade(6,s)));
 
 
         em.persist(s);
@@ -36,5 +37,6 @@ public class SchoolApplication {
 
         List<Student> people = em.createQuery("SELECT s FROM Student s Where s.person.firstName=:parametr ")
                 .setParameter("parametr","Mysia").getResultList();
+
     }
 }
