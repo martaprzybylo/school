@@ -1,8 +1,9 @@
 package com.sda.school.model;
 
 import javax.persistence.*;
-
-public class Calss extends EntityBase {
+@Table (name = "class")
+@Entity (name = "Class")
+public class Class extends EntityBase {
 
     @Column(name ="class_name")
     private String className;

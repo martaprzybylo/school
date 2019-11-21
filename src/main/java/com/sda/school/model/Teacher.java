@@ -1,4 +1,11 @@
 package com.sda.school.model;
 
-public class Teacher {
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Table(name = "teacher")
+@Entity(name = "Teacher")
+public class Teacher extends EntityBase {
+
+
 }
